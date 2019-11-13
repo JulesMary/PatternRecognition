@@ -78,5 +78,20 @@ f = exp(-0.5*((x-m)./s).^2)./(sqrt(2*pi)*s);
 hold on;
 plot(x, f, 'g');
 
+inInterval = length(find(B > (s*-1) & B<s));
+lengthB = length(B(:));
+bInS = inInterval/lengthB
+
+inInterval2 = length(find(B > (s*-2) & B<2*s));
+bInS2 = inInterval2/lengthB
+
+
+inInterval3 = length(find(B > (s*-3) & B<3*s));
+bInS3 = inInterval3/lengthB
+
+
+
+
+
 
 
