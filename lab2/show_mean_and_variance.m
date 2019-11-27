@@ -10,6 +10,7 @@ for i = 0:9
   Mean = reshape(Mean,	[28,28])';
   % display the mean values
   figure,	imshow(Mean,[]);
+  title(cstrcat('Mean of digit ', num2str(i)))
   
   % also calculate the variance columnwise
   Var = var(D,0,1);
@@ -17,4 +18,5 @@ for i = 0:9
   Var = reshape(Var,	[28,28])';
   % display
   figure,	imshow(Var,[]);  
+  title(cstrcat('Variance of digit ', num2str(i)))
 endfor

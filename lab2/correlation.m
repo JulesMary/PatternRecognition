@@ -2,7 +2,7 @@ close all
 clear all
 clc
 
-digit = 5;
+digit = 7;
 x_coor = 23;
 y_coor = 9;
 function show_correlation	(digit,	x_coor,	y_coor)
@@ -30,8 +30,8 @@ function show_correlation	(digit,	x_coor,	y_coor)
   imshow(show_pixel,[])
   title('considered pixel')
   subplot(1,2,2)
-  title('correlation')
   imshow(corr_mat,[])
+  title('correlation')
 endfunction
 
 show_correlation(digit,	x_coor,	y_coor);

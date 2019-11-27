@@ -23,3 +23,4 @@ endfor
 figure
 bar(freq)
 grid on
+title('gray value distribution of pixel 297 for digit 3')

@@ -7,6 +7,7 @@ clc
 % specify the considered digit
 digit = 7;
 load(strcat("digit", int2str(digit), ".mat"));
+[height, width] = size(D);
 
 % calculate the varince to see interesting spots
 Var = var(D,0,1);
@@ -29,13 +30,16 @@ for pixel_num = pix
     freq = [freq x];
   endfor
   
+  % illustrate which pixel we're considering
+  black = zeros(1,width);
+  black(pixel_num) = 255;
+  show_pixel = reshape(black, [28,28])';
   %plot the histogram
   figure
   bar(freq)
   grid on
-  % illustrate which pixel we're considering
-  VarPic = Var;
-  VarPic(pixel_num) = 255;
-  VarPic = reshape(VarPic,	[28,28])';
-  figure,	imshow(VarPic,[]); 
+  title(cstrcat('gray value distribution of pixel ',num2str(pixel_num),' for digit ', num2str(digit)))
+  figure
+  imshow(show_pixel,[]); 
+  title(cstrcat('pixel number ',num2str(pixel_num)))
 endfor

@@ -12,17 +12,17 @@ function show_joint_probs(min_val, max_val, digit)
   % see where we have values that are greater than the min
   greater_min = D >= min_mat;
   % see where we have values that are smaller than the max
-  smaller_max = D <  max_mat;
+  smaller_max = D <=  max_mat;
   % get the sum of those values and divide by the number of different digits
   prob_min = sum(greater_min)./height;
   prob_max = sum(smaller_max)./height;
   % joint probability by multiplying both probabilities
   joint_prob = prob_max.*prob_min;
   
-  %prob_range = linspace(min(joint_prob), max(joint_prob), 256);
+  prob_range = linspace(min(joint_prob), max(joint_prob), 256);
   
   % get the range to fit the gray values
-  prob_range = linspace(0, 1, 256);
+  %prob_range = linspace(0, 1, 256);
   for i = 1:length(joint_prob)
     joint_prob(i) = find(prob_range >= joint_prob(i), 1, 'first') -1;
   endfor

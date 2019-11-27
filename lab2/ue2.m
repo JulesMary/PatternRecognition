@@ -17,12 +17,13 @@ function show_data(im_num)
              I = I';
              % display the picture
              figure,	imshow(I,[]);
+             title(cstrcat('sample of digit ', num2str(i)))
              pause(0.1);
     end
   end
 endfunction
 
-show_data(2)
+show_data(5)
 
 
 
