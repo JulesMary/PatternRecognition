@@ -1,0 +1,61 @@
+\documentclass[11pt]{article}%{acm_proc_article-sp}
+\usepackage[utf8]{inputenc}  
+\usepackage[ngermanb]{babel} 
+\usepackage{mathptmx}
+\usepackage{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
+\usepackage{breakurl}
+\usepackage{apacite} % citationstyle: APA
+%\usepackage[breaklinks]{hyperref}
+\geometry{a4paper, top=25mm, left=25mm, right=25mm, bottom=20mm}
+\usepackage{mwe}
+\usepackage[markcase=noupper% Großschreibung unterdrücken
+]{scrlayer-scrpage}
+\ohead{}% äußeren Kopf leeren
+\cfoot*{\pagemark}% Seitenzahl in die Mitte des Fußes, auch auf plain Seiten
+\ifoot*{Jule, Judith, Raphael}% Name und Titel untereinander im inneren Fuß
+%\setlength{\footheight}{24.0pt}
+%headsep=10mm, footskip=12mm}
+\usepackage{amsthm}
+\usepackage{amsmath}
+%\usepackage{mathptmx}
+\usepackage{geometry}
+\usepackage{diagbox}
+\usepackage{hyperref}
+\usepackage{pdfpages}
+\usepackage{listings}
+\usepackage{mhchem}
+
+\begin{document}
+\author{Jule, Judith, Raphael}
+\title{\vspace{-1.5cm}Pattern Recognition Exercise 1}
+\date{}
+\maketitle
+\section*{Part a}
+In both cases we wand only integer values, thats why we have to do rounding in the first place. For matrix A we use the fix function, which rounds values towards zero. This provides us with numbers between 0 an 9 (before rounding we mulitplying by 10). The values in A are all positive, so rounding towards 0 doesn't affect the uniformly distribution of the values.
+For matrix we have both, positive and negative values. Here we use the round function, which rounds all values to the nearest integer value. Since there is no given interval in which the numbers in B have to lie, we can use the numbers we got from rounding as they are.
+\section*{b}
+amin: 0\\
+amax: 9\\
+bmin: -38\\
+bmax: 44\\
+Note: The values of B vary in each execution of the program, so the values shown are just examples.
+\section*{c}
+See code.
+\section*{Parts d + e}
+\includegraphics[scale=0.35]{freq_a.png}\\
+\includegraphics[scale=0.35]{freq_b.png}\\
+\section*{Parts f + g}
+\includegraphics[scale=0.35]{prob_a.png}\\
+\includegraphics[scale=0.35]{prob_b.png}\\
+sum\_a = 1\\
+sum\_b = 1.0
+\section*{Part h}
+a: 70.6 \%\\
+b: 96.0 \%\\
+c: 99.7 \%\\
+
+\newpage
+
+\end{document}
