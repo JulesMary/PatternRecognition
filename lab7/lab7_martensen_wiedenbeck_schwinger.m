@@ -15,7 +15,7 @@ end
 
  
  % For each data set, determine the Maximum-likelihood estimate for parameter ?
- for j = 1:5%size(data,2)
+ for j = 1:size(data,2)
    pos_vals = data(:,j);
    pos_vals = pos_vals(pos_vals > 0);
    lle = 1 / mean(pos_vals); % compute Maximum-likelihood estimate for parameter ? 
@@ -25,9 +25,16 @@ end
    sum_vals =  sum(pos_vals);
    T  =  [lambdas,  log(lambdas).*size(pos_vals) - lambdas.*sum_vals];
    %T = sort(T,1); % sort for plotting
+   upper = 50 - mod(max(T(:,2)),50)+max(T(:,2));
+   lower = min(T(:,2))-mod(min(T(:,2)),50);
    figure
    plot(T(:,1),T(:,2)); %plot
    hold on
-   plot([lle,lle],[min(T(:,2))+10,max(T(:,2))+10]);   
+   plot([lle, lle],[lower, upper]); 
+   ylim([lower upper])
+   xlabel('lambda')
+   ylabel('Log-likelihood')
+   title('Log-likelihood function of trainig samples')  
+   grid on
  end
 
